@@ -207,7 +207,7 @@ class SensorService:
 
         imu_msg.orientation_covariance = imu_raw_msg.orientation_covariance
 
-        if (self.param.publish_raw_accel):
+        if self.param.publish_raw_accel.value:
             imu_msg.linear_acceleration = imu_raw_msg.linear_acceleration
         else:
             imu_msg.linear_acceleration.x = \
